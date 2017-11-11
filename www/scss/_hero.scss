@@ -32,12 +32,15 @@
     align-items: center;
     text-align: justify;
 
-    h1 {
-      font-weight: 200;
-    }
-
     p {
       color: $white-transparent-8;
+
+      opacity: 0;
+    }
+
+    #name-svg {
+      opacity: 0;
+      margin-top: -200px;
     }
   }
 }
