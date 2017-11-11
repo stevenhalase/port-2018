@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700|Raleway:300,400,700');
+
+$fa: FontAwesome;
+$montserrat: 'Montserrat', sans-serif;
+$raleway: 'Raleway', sans-serif;
+
+h1 {
+  font-size: 59px;
+  font-family: $montserrat;
+}
+
+h2 {
+  font-size: 40px;
+  font-family: $montserrat;
+}
+
+h3 {
+  font-size: 28px;
+  font-family: $montserrat;
+}
+
+h4 {
+  font-size: 23px;
+  font-family: $montserrat;
+}
+
+p {
+  font-size: 14px;
+  font-family: $raleway;
+}

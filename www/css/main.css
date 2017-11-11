@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700|Raleway:300,400,700");
+h1 {
+  font-size: 59px;
+  font-family: "Montserrat", sans-serif; }
+
+h2 {
+  font-size: 40px;
+  font-family: "Montserrat", sans-serif; }
+
+h3 {
+  font-size: 28px;
+  font-family: "Montserrat", sans-serif; }
+
+h4 {
+  font-size: 23px;
+  font-family: "Montserrat", sans-serif; }
+
+p {
+  font-size: 14px;
+  font-family: "Raleway", sans-serif; }
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  color: #FFF; }
+  .hero:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0.8) 100%), url(/assets/hero-bg.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    z-index: -1; }
+  .hero .hero-content {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify; }
+    .hero .hero-content h1 {
+      font-weight: 200; }
+    .hero .hero-content p {
+      color: rgba(255, 255, 255, 0.8); }
+
+.portfolio {
+  margin-top: -30vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3%; }
+  .portfolio .portfolio-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 0; }
+    .portfolio .portfolio-nav .portfolio-nav-item {
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 100px;
+      padding: 6px 15px;
+      margin: 5px 8px;
+      cursor: pointer;
+      background-color: transparent;
+      transition: all .3s ease-in-out; }
+      .portfolio .portfolio-nav .portfolio-nav-item:hover {
+        background-color: #47c9e5;
+        transition: all .3s ease-in-out; }
+        .portfolio .portfolio-nav .portfolio-nav-item:hover a {
+          color: #FFF;
+          transition: all .3s ease-in-out; }
+      .portfolio .portfolio-nav .portfolio-nav-item a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: all .3s ease-in-out; }
+  .portfolio .portfolio-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 200px; }
+    .portfolio .portfolio-items .portfolio-item {
+      flex: 0 0 30%;
+      margin: 20px 1.666%;
+      height: 215px;
+      border-radius: 0;
+      position: relative;
+      overflow: hidden;
+      backface-visibility: hidden;
+      cursor: pointer;
+      transition: all .5s ease-in-out; }
+      .portfolio .portfolio-items .portfolio-item:hover {
+        border-radius: 10px;
+        transition: all .5s ease-in-out; }
+        .portfolio .portfolio-items .portfolio-item:hover .portfolio-item-background {
+          transform: scale(1.25);
+          transition: all .5s ease-in-out; }
+        .portfolio .portfolio-items .portfolio-item:hover .portfolio-item-content {
+          top: 50%;
+          transform: translateY(-50%);
+          opacity: 1;
+          transition: all .5s ease-in-out; }
+        .portfolio .portfolio-items .portfolio-item:hover .portfolio-item-fullscreen {
+          opacity: 1;
+          top: 15px;
+          transition: all .5s ease-in-out; }
+        .portfolio .portfolio-items .portfolio-item:hover .portfolio-item-hover {
+          opacity: 1;
+          transition: all .5s ease-in-out; }
+        .portfolio .portfolio-items .portfolio-item:hover .portfolio-item-tech-stack {
+          opacity: 1;
+          bottom: 0;
+          transition: all .6s ease-in-out; }
+      .portfolio .portfolio-items .portfolio-item .portfolio-item-background {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        transition: all .5s ease-in-out; }
+      .portfolio .portfolio-items .portfolio-item .portfolio-item-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 15;
+        width: 100%;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        .portfolio .portfolio-items .portfolio-item .portfolio-item-content .portfolio-item-title {
+          color: #FFF;
+          font-family: "Montserrat", sans-serif;
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 10px; }
+        .portfolio .portfolio-items .portfolio-item .portfolio-item-content .portfolio-item-website {
+          color: #FFF;
+          font-family: "Montserrat", sans-serif;
+          font-size: 13px;
+          text-transform: uppercase;
+          opacity: .8; }
+      .portfolio .portfolio-items .portfolio-item .portfolio-item-fullscreen {
+        opacity: 0;
+        z-index: 15;
+        font-size: 30px;
+        color: #FFF;
+        position: absolute;
+        top: 30px;
+        right: 15px;
+        transition: all .3s ease-in-out; }
+      .portfolio .portfolio-items .portfolio-item .portfolio-item-hover {
+        opacity: 0;
+        z-index: 11;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(45deg, rgba(71, 201, 229, 0.9) 0, rgba(102, 252, 233, 0.9) 100%);
+        transition: all .5s ease-in-out; }
+      .portfolio .portfolio-items .portfolio-item .portfolio-item-tech-stack {
+        opacity: 0;
+        position: absolute;
+        bottom: -50px;
+        height: 50px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        z-index: 15;
+        transition: all .5s ease-in-out; }
+        .portfolio .portfolio-items .portfolio-item .portfolio-item-tech-stack .portfolio-item-tech {
+          margin-right: 10px;
+          width: 30px;
+          height: 30px;
+          background-color: #333;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px; }
+          .portfolio .portfolio-items .portfolio-item .portfolio-item-tech-stack .portfolio-item-tech img {
+            width: 20px; }
+
+/* GLOBAL */
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: #111116; }

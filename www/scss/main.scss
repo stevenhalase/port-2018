@@ -1,0 +1,16 @@
+@import 'colors';
+@import 'fonts';
+
+@import 'hero';
+@import 'portfolio';
+
+/* GLOBAL */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: $gray--extra-dark;
+}
