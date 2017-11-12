@@ -47,7 +47,8 @@ p {
         color: #47c9e5;
         transition: all .3s ease-in-out; }
   .nav .nav-logo {
-    margin: 0 auto; }
+    margin: 0 auto;
+    cursor: pointer; }
   .nav .nav-menu {
     padding: 30px; }
     .nav .nav-menu .nav-menu-button {
@@ -147,18 +148,22 @@ p {
     filter: grayscale(100%);
     z-index: -1; }
   .hero .hero-content {
-    width: 50vw;
+    width: 40vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: justify; }
     .hero .hero-content p {
-      color: rgba(255, 255, 255, 0.8);
-      opacity: 0; }
-    .hero .hero-content #name-svg {
-      opacity: 0;
-      margin-top: -200px; }
+      color: rgba(255, 255, 255, 0.8); }
+
+@media screen and (max-width: 768px) {
+  .hero-content {
+    width: 70vw !important; } }
+
+@media screen and (max-width: 1201px) {
+  .hero-content {
+    width: 50vw !important; } }
 
 .portfolio {
   margin-top: -30vh;
@@ -225,7 +230,7 @@ p {
           transition: all .5s ease-in-out; }
         .portfolio .portfolio-items .portfolio-item:hover .portfolio-item-fullscreen {
           opacity: 1;
-          top: 15px;
+          top: 5px;
           transition: all .5s ease-in-out; }
         .portfolio .portfolio-items .portfolio-item:hover .portfolio-item-hover {
           opacity: 1;
@@ -245,6 +250,7 @@ p {
         width: 100%;
         height: 100%;
         backface-visibility: hidden;
+        pointer-events: none;
         transition: all .5s ease-in-out; }
       .portfolio .portfolio-items .portfolio-item .portfolio-item-content {
         position: absolute;
@@ -256,7 +262,9 @@ p {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center; }
+        align-items: center;
+        text-align: center;
+        pointer-events: none; }
         .portfolio .portfolio-items .portfolio-item .portfolio-item-content .portfolio-item-title {
           color: #FFF;
           font-family: "Montserrat", sans-serif;
@@ -272,11 +280,12 @@ p {
       .portfolio .portfolio-items .portfolio-item .portfolio-item-fullscreen {
         opacity: 0;
         z-index: 15;
-        font-size: 30px;
+        font-size: 40px;
         color: #FFF;
         position: absolute;
         top: 30px;
         right: 15px;
+        pointer-events: none;
         transition: all .3s ease-in-out; }
       .portfolio .portfolio-items .portfolio-item .portfolio-item-hover {
         opacity: 0;
@@ -287,6 +296,7 @@ p {
         height: 100%;
         width: 100%;
         background: linear-gradient(45deg, rgba(71, 201, 229, 0.9) 0, rgba(102, 252, 233, 0.9) 100%);
+        pointer-events: none;
         transition: all .5s ease-in-out; }
       .portfolio .portfolio-items .portfolio-item .portfolio-item-tech-stack {
         opacity: 0;
@@ -299,6 +309,7 @@ p {
         justify-content: flex-end;
         align-items: center;
         z-index: 15;
+        pointer-events: none;
         transition: all .5s ease-in-out; }
         .portfolio .portfolio-items .portfolio-item .portfolio-item-tech-stack .portfolio-item-tech {
           margin-right: 10px;
@@ -312,10 +323,96 @@ p {
           border-radius: 5px; }
           .portfolio .portfolio-items .portfolio-item .portfolio-item-tech-stack .portfolio-item-tech img {
             width: 20px; }
+      .portfolio .portfolio-items .portfolio-item .portfolio-item-modal {
+        position: fixed;
+        height: 0;
+        width: 0;
+        bottom: -100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1100;
+        overflow: hidden;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        pointer-events: none;
+        transition: all .5s ease-in-out; }
+        .portfolio .portfolio-items .portfolio-item .portfolio-item-modal .modal-close {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          font-size: 40px;
+          color: #FFF;
+          transition: all .5s ease-in-out; }
+          .portfolio .portfolio-items .portfolio-item .portfolio-item-modal .modal-close:hover {
+            color: #47c9e5;
+            transition: all .5s ease-in-out; }
+        .portfolio .portfolio-items .portfolio-item .portfolio-item-modal .modal-slider {
+          height: 60vh;
+          background-color: #111116; }
+          .portfolio .portfolio-items .portfolio-item .portfolio-item-modal .modal-slider .modal-slide {
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 30px solid #111116; }
+        .portfolio .portfolio-items .portfolio-item .portfolio-item-modal .modal-content {
+          height: 40vh;
+          background-color: #FFF;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 0 15%;
+          position: relative; }
+          .portfolio .portfolio-items .portfolio-item .portfolio-item-modal .modal-content .modal-tech .portfolio-item-tech-stack {
+            opacity: 1;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 50px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: auto;
+            pointer-events: auto; }
+            .portfolio .portfolio-items .portfolio-item .portfolio-item-modal .modal-content .modal-tech .portfolio-item-tech-stack .portfolio-item-tech {
+              margin-right: 10px;
+              width: 30px;
+              height: 30px;
+              background-color: #333;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              border-radius: 5px; }
+              .portfolio .portfolio-items .portfolio-item .portfolio-item-modal .modal-content .modal-tech .portfolio-item-tech-stack .portfolio-item-tech img {
+                width: 20px; }
+          .portfolio .portfolio-items .portfolio-item .portfolio-item-modal .modal-content .modal-info .modal-title {
+            font-family: "Montserrat", sans-serif; }
+            .portfolio .portfolio-items .portfolio-item .portfolio-item-modal .modal-content .modal-info .modal-title .title--light {
+              color: #c3c3c3;
+              font-size: 12px; }
+          .portfolio .portfolio-items .portfolio-item .portfolio-item-modal .modal-content .modal-info .modal-description {
+            text-align: justify; }
+        .portfolio .portfolio-items .portfolio-item .portfolio-item-modal.open {
+          height: 100vh;
+          width: 100vw;
+          bottom: -50%;
+          pointer-events: auto;
+          opacity: 1;
+          transition: all .5s ease-in-out; }
+
+.tippy-popper {
+  font-family: "Raleway", sans-serif; }
 
 /* GLOBAL */
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  backface-visibility: hidden; }
 
 body {
   margin: 0;
